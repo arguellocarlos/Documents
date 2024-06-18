@@ -1,0 +1,27 @@
+- enable
+- show running-config
+- configure terminal
+- hostname ""
+- ip domain-name ""
+- username "" secret ""
+- enable secret ""
+- crypto key generate rsa general-keys modulus "" (4096)
+- ip ssh version 2
+- line console 0
+- login local
+- line vty 0 4
+- login local
+- transport input ssh
+- exit (config-line)
+- interface range fastEthernet "" (interface range fastEthernet 0/1-24, g0/1-2)
+- switchport mode access
+- switchport access vlan ""
+- switchport nonegotiate
+- spanning-tree portfast
+- exit
+- interface vlan ""
+- ip address "" ""
+- no shut
+- ip default-gateway ""
+- exit
+- copy run start
